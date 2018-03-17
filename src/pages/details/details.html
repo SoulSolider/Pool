@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-navbar color="water">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>San Francisco</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="img-details">
+  <div class="main_item">
+    <img src="{{selectedImg}}" width="100%" height="240" class="mybackground" />
+    <div class="card-title">San Francisco</div>
+  </div>
+  <ion-scroll scrollX="true" class="more_img">
+     <div class="item_img"  *ngFor="let item of imgs" [ngClass]="{'active_select':selectedImg==item.img}" (click)="getImg(item.img)">
+       <img src="{{item.img}}">
+     </div>
+  </ion-scroll>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button clear full icon-left color="water" (click)="callNumber()">
+        <ion-icon name="ios-call-outline" large></ion-icon>
+        Contact
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button clear full icon-left color="water" (click)="goToMapPage()">
+        <ion-icon name="ios-compass-outline" large></ion-icon>
+          Location
+        </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="recipe_info">
+      <ion-col col-2>
+        <button ion-button clear tooltip="x2 bathrooms" positionV="bottom" arrow>
+          <img src="assets/imgs/bathtub-1.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear tooltip="x1 room" positionV="bottom" arrow>
+          <img src="assets/imgs/armchair.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear tooltip="x1 kitchen" positionV="bottom" arrow>
+          <img src="assets/imgs/cooking.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear tooltip="x1 football field" positionV="bottom" arrow>
+          <img src="assets/imgs/football-field.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear tooltip="x1 table tennis" positionV="bottom" arrow>
+          <img src="assets/imgs/ping-pong-1.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear tooltip="x1 TV" positionV="bottom" arrow>
+          <img src="assets/imgs/monitor.svg" width="45px;" height="45px;">
+        </button>
+      </ion-col>
+  </ion-row>
+
+  <ion-card>
+      <ion-card-content>
+
+        <ion-item (click)="toggleTimingDetails()" color="light">
+            <ion-icon name="md-clock"></ion-icon> <strong>Time</strong>
+            <button ion-button clear item-end icon-left>
+              <ion-icon [name]="TimingIcon"></ion-icon>
+            </button>
+          </ion-item>
+        <div *ngIf="showTimingDetails">
+            <ion-row>
+                <ion-col col-6 left style="font-size:16px">
+                  <ion-icon name="md-sunny" color="yellowColor" large></ion-icon> 8AM to 5PM
+                </ion-col>
+                <ion-col col-6 right style="font-size:16px">
+                  <ion-icon name="md-resize" color="secondary" large></ion-icon> (12 x 6)
+                </ion-col>
+              </ion-row> 
+              <hr />
+              <ion-row>
+                  <ion-col col-6 left style="font-size:16px">
+                    <ion-icon name="md-moon" color="nightColor" large></ion-icon> 8PM to 5AM
+                  </ion-col>
+                  <ion-col col-6 right style="font-size:16px">
+                    <ion-icon name="md-water" color="blackcolor" large></ion-icon> Chlorine
+                  </ion-col>
+                </ion-row>
+        </div>
+
+            <ion-item (click)="toggleDetails()" color="light">
+                <ion-icon name="md-card"></ion-icon> <strong>Price</strong>
+                <button ion-button clear item-end icon-left>
+                  <ion-icon [name]="icon"></ion-icon>
+                </button>
+              </ion-item>
+
+
+            <div *ngIf="showDetails">
+              <span style="text-align:center;" style="font-size:16px"><strong>Weekdays</strong></span>
+              <hr />
+              <ion-row>
+                <ion-col col-6 left style="font-size:16px">
+                    <ion-icon name="md-sunny" color="yellowColor" large></ion-icon>
+                    <ion-icon name="md-moon" color="nightColor" large></ion-icon>
+                    Price: {{NormalPrice}} BHD
+                </ion-col>
+                <ion-col col-6 right style="font-size:16px">
+                  <ion-icon name="md-cash" color="yellowColor" large></ion-icon> Deposit: {{NormalDownPayment}} BHD     
+                </ion-col>
+              </ion-row>
+              <span style="text-align:center;" style="font-size:16px"><strong>Weekends</strong></span>
+              <hr />
+              <ion-row>
+                <ion-col col-6 left style="font-size:16px">
+                    <ion-icon name="md-sunny" color="yellowColor" large></ion-icon>
+                    <ion-icon name="md-moon" color="nightColor" large></ion-icon>
+                    Price: {{WeekendPrice}} BHD
+                </ion-col>
+                <ion-col col-6 right style="font-size:16px">
+                  <ion-icon name="md-cash" color="yellowColor" large></ion-icon> Deposit: {{WeekendDownPayment}} BHD      
+                </ion-col>
+              </ion-row>
+             
+            </div>
+            
+            
+
+            <!--<ion-list>
+                  <ion-item padding *ngFor="let d of data" >
+                    {{d.title}}
+                    <div *ngIf="d.showDetails">{{d.details}}</div>
+                  </ion-item>
+                </ion-list>-->
+      </ion-card-content>
+    </ion-card>
+
+  <div style="height:320px">
+      <h3 style="text-align:center;">{{viewTitle}}</h3>
+      <calendar [eventSource]="eventSource" style="height:100px"
+      [markDisabled]="markDisabled"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onCurrentDateChanged)="onCurrentDateChanged($event)"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      step="30"
+      noEventsLabel="">
+    </calendar>
+  </div>
+
+  <ion-row *ngIf="eventClicked">
+      <ion-col>
+        <button ion-button clean block icon-left color="yellowColor" (click)="goToCheckoutPage()">
+          <ion-icon name="ios-sunny-outline" large></ion-icon>
+          Day
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clean block icon-left color="nightColor">
+          <ion-icon name="ios-moon-outline" large></ion-icon>
+            Night
+          </button>
+      </ion-col>
+    </ion-row>
+ 
+</ion-content>

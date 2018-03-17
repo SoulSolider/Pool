@@ -1,18 +1,55 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <ion-navbar color="water">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
+    <ion-buttons right>
+      <button ion-button>
+          <ion-icon name="search" style="font-size:25px"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="card-background-page">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+    <ion-card (click)="goToDetailsPage()">
+      <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-saopaolo.png"/>
+      <div class="card-title">São Paulo</div>
+      <div class="card-subtitle">41 Listings</div>
+      <div class="layer"></div>
+      <div class="card-pricing-normal"><ion-icon name="ios-calendar"> Normal: 70 BD</ion-icon></div>
+      <div class="card-pricing-holiday"><ion-icon name="md-calendar"> Holiday: 100 BD</ion-icon></div>
+    </ion-card>
+  
+    <ion-card (click)="goToDetailsPage()">
+      <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-amsterdam.png"/>
+      <div class="card-title">Amsterdam</div>
+      <div class="card-subtitle">64 Listings</div>
+      <div class="layer"></div>
+      <div class="card-pricing-normal"><ion-icon name="ios-calendar"> Normal: 60 BD</ion-icon></div>
+      <div class="card-pricing-holiday"><ion-icon name="md-calendar"> Holiday: 90 BD</ion-icon></div>
+    </ion-card>
+  
+    <ion-card (click)="goToDetailsPage()">
+      <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-sf.png"/>
+      <div class="card-title">San Francisco</div>
+      <div class="card-subtitle">72 Listings</div>
+      <div class="layer"></div>
+      <div class="card-pricing-normal"><ion-icon name="ios-calendar"> Normal: 80 BD</ion-icon></div>
+      <div class="card-pricing-holiday"><ion-icon name="md-calendar"> Holiday: 120 BD</ion-icon></div>
+    </ion-card>
+  
+    <ion-card (click)="goToDetailsPage()">
+      <img src="https://ionicframework.com/dist/preview-app/www/assets/img/card-madison.png"/>
+      <div class="card-title">Madison</div>
+      <div class="card-subtitle">28 Listings</div>
+      <div class="layer"></div>
+      <div class="card-pricing-normal"><ion-icon name="ios-calendar"> Normal: 50 BD</ion-icon></div>
+      <div class="card-pricing-holiday"><ion-icon name="md-calendar"> Holiday: 60 BD</ion-icon></div>
+    </ion-card>
+  
+  </ion-content>

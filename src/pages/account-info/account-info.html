@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="water">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Account Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content >
+
+    <ion-list lines>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input disabled type="email" value="knight.soul.kareem@gmail.com"></ion-input>
+      </ion-item>
+
+  <ion-item>
+    <ion-label stacked>First Name</ion-label>
+    <ion-input type="text" value="Kareem"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Last Name</ion-label>
+    <ion-input type="text" value="Aziz"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Date of Birth (optional)</ion-label>
+    <ion-input type="date" value="1994-11-26"></ion-input>
+  </ion-item>
+
+
+
+</ion-list>
+
+<ion-card>
+  <ion-card-content>
+    <p style="text-align:left"><strong>Receive updates on offers, promotions and discounts</strong></p>
+    <ion-list>
+    <ion-item>
+    <ion-label> SMS Notifications </ion-label>
+    <ion-toggle checked="false"></ion-toggle>
+  </ion-item>
+  <hr/>
+  <ion-item>
+    <ion-label> Newsletter Subscription </ion-label>
+    <ion-toggle checked="false"></ion-toggle>
+  </ion-item>
+
+    </ion-list>
+
+  </ion-card-content>
+</ion-card>
+
+<button ion-button block color="secondary">
+  SAVE
+</button>
+
+
+</ion-content>

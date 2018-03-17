@@ -1,7 +1,9 @@
+import { SettingsPage } from './../pages/settings/settings';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ReservationsListPage } from './../pages/reservations-list/reservations-list';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -16,7 +18,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, 
+    public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -25,6 +28,19 @@ export class MyApp {
       { title: 'List', component: ListPage }
     ];
 
+  }
+
+  goToMyReservations(){
+    this.nav.setRoot(ReservationsListPage);
+  }
+
+  goToSettingsPage(){
+    this.nav.setRoot(SettingsPage);
+    //this.navCtrl.push(SettingsPage,{},{animate: true, direction: 'forward'});
+  }
+
+  goToHome(){
+    this.nav.setRoot(HomePage);
   }
 
   initializeApp() {

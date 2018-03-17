@@ -1,17 +1,66 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
+
+  <ion-header class="container" style="width: 100%; padding-bottom:0px;">
+    <img src="assets/imgs/waves.gif" />
+    <button ion-button menuClose class="topright" clear outline color="light" (click)="goToSettingsPage()">
+      <ion-icon name="ios-settings-outline"></ion-icon>
+    </button>
+    <div class="card-title">Kareem Abdulaziz</div>
+    <div class="card-subtitle">knight.soul.kareem@gmail.com</div>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="sidebar-font">
+    <!-- My Details Section -->
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <ion-list-header>
+        MY DETAILS
+      </ion-list-header>
+
+      <button ion-item menuClose (click)="goToHome()">
+        <ion-icon name="ios-home-outline" item-start></ion-icon>
+          Home
+      </button>
+
+      <button ion-item menuClose (click)="goToMyReservations()">
+        <ion-icon name="ios-list-outline" item-start></ion-icon>
+          Reservations
       </button>
     </ion-list>
-  </ion-content>
+    <!-- My Details Section -->
+
+    <!-- Help & Support Section -->
+    <ion-list>
+      <ion-list-header>
+        HELP AND SUPPORT
+      </ion-list-header>
+      <button ion-item>
+        <ion-icon name="ios-help-outline" item-start></ion-icon>
+        FAQs
+      </button>
+
+      <button ion-item>
+        <ion-icon name="ios-call-outline" item-start></ion-icon>
+        Customer Care
+      </button>
+
+      <button ion-item>
+        <ion-icon name="ios-alert-outline" item-start></ion-icon>
+        About
+      </button>
+    </ion-list>
+    <!-- Help & Support Section -->
+
+    <!-- Sidebar Footer -->
+    <ion-footer>
+        <ion-list>
+            <button ion-item>
+              <ion-icon name="ios-log-out-outline" color="danger" item-start></ion-icon>
+                <span style="color:red;">Logout</span> 
+            </button>
+        </ion-list>
+    </ion-footer>
+    <!-- Sidebar Footer -->
+</ion-content>
 
 </ion-menu>
 

@@ -1,0 +1,67 @@
+page-reservation-details {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          height: 100%;
+        }
+      
+        .card-title {
+          position: absolute;
+          font-family: "times";
+          font-size: "24px";
+          top: 20%;
+          text-align:center;
+          font-size: 3.0em;
+          width: 100%;
+          font-weight: bold;
+          color: #fff;
+        }
+      
+        .card-subtitle_1 {
+          font-size: 2.0em;
+          font-family: "times";
+          text-align:center;
+          position: absolute;
+          top: 30%;
+          width: 100%;
+          color: #fff;
+        }
+        .card-subtitle_2 {
+            font-size: 2.0em;
+            font-family: "times";
+            position: absolute;
+            text-align:center;
+            top: 40%;
+            width: 100%;
+            color: #fff;
+          }
+          .card-subtitle_3 {
+            font-size: 2.0em;
+            font-family: "times";
+            position: absolute;
+            text-align:center;
+            top: 50%;
+            width: 100%;
+            color: #fff;
+          }
+
+        .card-pricing-normal {
+          font-size: 1.0em;
+          position: absolute;
+          top: 90%;
+          left:60%;
+          color: #fff;
+        }
+
+        .card-pricing-holiday {
+            font-size: 1.0em;
+            position: absolute;
+            top: 90%;
+            right:60%;
+            color: #fff;
+          }
+      
+      }
+}

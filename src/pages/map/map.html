@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="water">
+      <ion-buttons left>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Location</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<!-- Google Map Div -->
+
+<ion-content padding>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</ion-content>
+
+<!-- Footer Buttons (Share Location & Navigate) -->
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <button ion-button clean block icon-left color="water" (click)="ShareLocation()">
+        <ion-icon name="md-share" large></ion-icon>Share
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button clean block icon-left color="water" (click)="NavigateLocation()">
+        <ion-icon name="ios-navigate-outline" large></ion-icon>Navigate
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

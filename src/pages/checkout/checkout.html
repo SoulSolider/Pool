@@ -1,0 +1,145 @@
+<ion-header>
+    <ion-navbar color="water">
+      <ion-buttons left>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title >Checkout</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+    <ion-slides pager loop autoplay="5000" style="max-height:400px;" class="slider">
+        <ion-slide *ngFor="let slide of slides" class="slider-slide">
+          <img src="{{slide.img}}"/>
+        </ion-slide>
+      </ion-slides>
+      <!--<div class="pool_info">
+          <ion-row>
+              <ion-col col-6 left style="font-size:16px">
+                <ion-item no-lines><img src="assets/imgs/pool-1.svg" width="20px;" height="20px;"> Abu Nizar</ion-item>
+              </ion-col>
+              <ion-col col-6 right style="font-size:16px">
+                <ion-item no-lines><img src="assets/imgs/calendar.svg" width="20px;" height="20px;"> 18/March/2018</ion-item>
+              </ion-col>
+            </ion-row> 
+            <ion-row>
+              <ion-col col-6 left style="font-size:16px">
+                <ion-item no-lines><img src="assets/imgs/half-moon.svg" width="20px;" height="20px;"> Morning </ion-item>
+              </ion-col>
+              <ion-col col-6 right style="font-size:16px">
+                <ion-item no-lines><img src="assets/imgs/alarm-clock.svg" width="20px;" height="20px;"> 8AM to 5PM</ion-item>
+              </ion-col>
+            </ion-row>
+    
+      </div>-->
+      
+
+        <ion-card style="font-family: 'Open Sans'; font-size: 8px;">
+
+
+
+
+
+
+
+          <ion-card-content style="font-family: 'Open Sans'; font-size: 15px;">
+
+              <ion-item no-lines color="light">
+                  <strong>Reservation Info</strong>
+                </ion-item>
+
+              <ion-row>
+                  <ion-col col-6 style="text-align:left">
+                      <img src="assets/imgs/pool-1.svg" width="20px;" height="20px;" style="text-align:left">
+                  </ion-col>
+                  <ion-col col-6>
+                      Abu Nizar
+                  </ion-col>
+                </ion-row>
+                <hr/>
+  
+                <ion-row>
+                    <ion-col col-6 style="text-align:left">
+                        <img src="assets/imgs/calendar.svg" width="20px;" height="20px;" style="text-align:left">
+                    </ion-col>
+                    <ion-col col-6>
+                        18/March/2018
+                    </ion-col>
+                  </ion-row>
+                  <hr/>
+  
+                  <ion-row>
+                      <ion-col col-6 style="text-align:left">
+                          <img src="assets/imgs/half-moon.svg" width="20px;" height="20px;" style="text-align:left">
+                      </ion-col>
+                      <ion-col col-6>
+                          Morning
+                      </ion-col>
+                    </ion-row>
+                    <hr/>
+  
+                    <ion-row>
+                        <ion-col col-6 style="text-align:left">
+                            <img src="assets/imgs/alarm-clock.svg" width="20px;" height="20px;" style="text-align:left">
+                        </ion-col>
+                        <ion-col col-6>
+                            8AM to 5PM
+                        </ion-col>
+                      </ion-row>
+
+                      <ion-item no-lines color="light">
+                          <strong>Payment Info</strong>
+                        </ion-item>
+
+
+            <ion-row>
+              <ion-col col-6 style="text-align:left">
+                Reservation
+              </ion-col>
+              <ion-col col-6 style="text-align:right">
+                100.000 BD
+              </ion-col>
+            </ion-row>
+            <hr />
+            <ion-row>
+              <ion-col col-6 style="text-align:left">
+                Insurance
+              </ion-col>
+              <ion-col col-6 style="text-align:right">
+                30.000 BD
+              </ion-col>
+            </ion-row>
+            <hr />
+            <ion-row>
+              <ion-col col-6 style="text-align:left">
+                Deposit
+              </ion-col>
+              <ion-col col-6 style="text-align:right">
+                20.000 BD
+              </ion-col>
+            </ion-row>
+            <ion-item no-lines color="light">
+              <strong>Payment Method</strong>
+            </ion-item>
+
+            <button ion-button block item-left>
+                <img src="assets/imgs/credit-card.svg" width="20px;" height="20px;" style="text-align:left">
+               Debit Card
+              </button>
+              
+              <!-- Float the icon left -->
+              <button ion-button block outline item-left>
+                  <img src="assets/imgs/visa.svg" width="20px;" height="20px;" style="text-align:left">
+                  Credit Card
+              </button>
+         
+          </ion-card-content>
+        </ion-card>
+</ion-content>
+
+<ion-footer>
+  <button ion-button block color="water" (click)="goToReservationDetailsPage()">Reserve Pool NOW</button>
+</ion-footer>
